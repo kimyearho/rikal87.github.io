@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/data-magnet.js"></script>
+<script type="text/javascript" src="js/sample.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 1번 테이블 -->
+	<table border="1">
+		<tr class="depth1 template"> 
+			<td>
+				<input type="text" data-ref="commited" value="false">
+				<input type="text" data-ref="name">
+			</td><!--  data-ref가 기본 바인딩 식별자임 -->
+			<td><span data-ref="age">{age}</span></td>
+			<td >
+				<table border="1">
+					<tr data-ref="address"> <!-- data.address 는 배열이므로, 해당 엘리먼트 반복 복제 -->
+						<td><span data-ref="value">{value}</span></td>
+						<td >
+							<input type="text" data-ref="zipcode">
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td >
+				<table border="1">
+					<tr data-ref="family"> <!-- data.family 는 배열이므로, 해당 엘리먼트 반복 복제 -->
+						<td><span data-ref="name">{name}</span></td>
+						<td><input type="text" data-ref="age"></td>
+						<td>
+							<div data-ref="like"><!-- data.family.like 는 배열이므로, 해당 엘리먼트 반복 복제 -->
+								<input type="text" data-ref="subject">
+								<input type="text" data-ref="weight">
+								<div>
+									<input type="radio" data-ref="gender" value="1">
+									<input type="radio" data-ref="gender" value="2">
+								</div>
+								<div>
+									<input type="radio" data-ref="gender" value="3">
+								</div>
+								<div>
+									<input type="checkbox" data-ref="favourite1" value="1">
+									<input type="checkbox" data-ref="favourite2" value="2">
+									<input type="checkbox" data-ref="favourite3" value="3">
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<button id="btn-check" type="button">check</button>
+	<!-- 2번 테이블 -->
+<!-- 	<table border="1"> -->
+<!-- 		<tr class="depth1 template"> -->
+<!-- 			<td><span data-ref="name"></span></td> -->
+<!-- 			<td><span data-ref="age"></span></td> -->
+<!-- 			<td > -->
+<!-- 				<table border="1"> -->
+<!-- 					<tr data-ref="address" class="template"> -->
+<!-- 						<td><span data-ref="value"></span></td> -->
+<!-- 						<td data-ref="zipcode"></td> -->
+<!-- 					</tr> -->
+<!-- 				</table> -->
+<!-- 			</td> -->
+<!-- 		</tr> -->
+<!-- 	</table> -->
+</body>
+<script type="text/javascript" src="js/data-magnet.js"></script>
+
+</html>
