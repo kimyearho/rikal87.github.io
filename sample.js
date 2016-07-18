@@ -47,7 +47,7 @@ var data = [
 $(document).ready(function(){
 	alert("바인딩 시작!");
 	var selector = $("tr.depth1.template"); // 적용범위 지정
-	var magnet = new DataMagnet(selector, false, false);
+	var magnet = new DataMagnet(selector, false);
 	magnet.bind(data, {
 		"family":{
 			"like":{
