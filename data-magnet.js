@@ -2,11 +2,10 @@
  * Data Magnet v1.1.0
  * Author: rikal872@gmail.com
  */
-var DataMagnet = function(scope, dependency, deleteTemplate){
+var DataMagnet = function(scope, dependency){
 
 	this.dataRef = "data-ref";
-	this.deleteSelector = deleteTemplate || false;
-	console.log(this.deleteSelector);
+	this.deleteSelector = true;
 	this.scope = $(scope);
 	this.dependency = dependency || false;
 	var seq = 0;
@@ -34,7 +33,6 @@ var DataMagnet = function(scope, dependency, deleteTemplate){
 	};
 	this.bind = function(data, func){
 		this.cloneElement(this.scope, data, func, false, true);
-		console.log(this.deleteSelector);
 		if(this.deleteSelector) $(this.scope).remove();
 		
 	};
@@ -83,8 +81,6 @@ var DataMagnet = function(scope, dependency, deleteTemplate){
 					$(el).prop("checked", data[ref]);
 				}break;
 				case "radio":{
-//					console.log(ref);
-//					console.log(data);
 					$(el).prop("name", $(el).attr("name") || $(el).attr(instance.dataRef) +"-"+ seq);
 					$(el).filter("[value="+data[ref]+"]").prop("checked", true);
 				}break;
